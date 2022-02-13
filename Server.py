@@ -3,6 +3,7 @@
 import _thread, time, socket
 from PyP100 import PyL530
 
+wave = False
 l530 = PyL530.L530("192.168.1.232", "harrs@btinternet.com", "davsha123") #Creating a L530 bulb object
 
 l530.handshake() #Creates the cookies required for further methods
@@ -13,6 +14,7 @@ l530.login() #Sends credentials to the plug and creates AES Key and IV for furth
 data = ''   # Declare an empty variable
 # UDP setup for listening
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.bind(('', 6968))  # I'm using port 12345 to bind to
 
 # Define a function for the thread
@@ -29,6 +31,23 @@ except:
     print ("Error: unable to start thread")
     quit()
 
+
+def StartWave():
+    wave = True
+    while wave:
+        l530.setBrightness(100)   
+        l530.setBrightness(80)   
+        l530.setBrightness(60)   
+        l530.setBrightness(40)   
+        l530.setBrightness(20)   
+        l530.setBrightness(0)   
+        l530.setBrightness(20)   
+        l530.setBrightness(40)   
+        l530.setBrightness(60)   
+        l530.setBrightness(80)   
+
+def StopWave():
+    wave = False
 
 while True:
     if data:
