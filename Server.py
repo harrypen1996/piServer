@@ -14,7 +14,6 @@ l530.login() #Sends credentials to the plug and creates AES Key and IV for furth
 data = ''   # Declare an empty variable
 # UDP setup for listening
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.bind(('', 6968))  # I'm using port 12345 to bind to
 
 # Define a function for the thread
