@@ -5,7 +5,8 @@ import _thread, time, socket
 data = ''   # Declare an empty variable
 # UDP setup for listening
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.bind(('', 12345))  # I'm using port 12345 to bind to
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+sock.bind(('', 6969))  # I'm using port 12345 to bind to
 
 # Define a function for the thread
 def listening_thread():
