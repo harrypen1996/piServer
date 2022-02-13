@@ -22,9 +22,10 @@ except:
     quit()
 
 
-while 1:
-    print ('Now I can do something useful while waiting in the main body.')
+while True:
     if data:
-        print ('THE PACKET RECEIVED BY THE MAIN BODY IS: ' + data)
+        print ('Received:' + data)
+        print ('Executing...')
+        exec(data)
         data = ''   # Empty the variable ready for the next one
-    time.sleep(2)
+    time.sleep(1)
