@@ -32,7 +32,6 @@ except:
 
 
 def DimAndOff():
-    time.sleep(3)
     l530.setBrightness(100)   
     l530.setBrightness(95)   
     l530.setBrightness(90)   
