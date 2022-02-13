@@ -30,6 +30,24 @@ except:
     print ("Error: unable to start thread")
     quit()
 
+
+def StartWave():
+    wave = True
+    while wave:
+        l530.setBrightness(100)   
+        l530.setBrightness(80)   
+        l530.setBrightness(60)   
+        l530.setBrightness(40)   
+        l530.setBrightness(20)   
+        l530.setBrightness(0)   
+        l530.setBrightness(20)   
+        l530.setBrightness(40)   
+        l530.setBrightness(60)   
+        l530.setBrightness(80)   
+
+def StopWave():
+    wave = False
+
 while True:
     if data:
         print ('Received:' + data)
