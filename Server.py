@@ -39,7 +39,7 @@ def StartWave():
         l530.setBrightness(60)   
         l530.setBrightness(40)   
         l530.setBrightness(20)   
-        l530.setBrightness(0)   
+        l530.setBrightness(1)   
         l530.setBrightness(20)   
         l530.setBrightness(40)   
         l530.setBrightness(60)   
