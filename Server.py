@@ -52,6 +52,6 @@ while True:
     if data:
         print ('Received:' + data)
         print ('Executing...')
-        exec(data)
+        _thread.start_new_thread(exec(data), ())
         data = ''   # Empty the variable ready for the next one
     time.sleep(1)
