@@ -1,12 +1,20 @@
 #!/usr/bin/python3
 
 import _thread, time, socket
+from PyP100 import PyL530
+
+l530 = PyL530.L530("192.168.X.X", "email@gmail.com", "Password123") #Creating a L530 bulb object
+
+l530.handshake() #Creates the cookies required for further methods
+l530.login() #Sends credentials to the plug and creates AES Key and IV for further methods
+
+#All the bulbs have the PyP100 functions and additionally allows for setting brightness, colour and white temperature
 
 data = ''   # Declare an empty variable
 # UDP setup for listening
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-sock.bind(('', 6969))  # I'm using port 12345 to bind to
+sock.bind(('', 6968))  # I'm using port 12345 to bind to
 
 # Define a function for the thread
 def listening_thread():
