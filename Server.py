@@ -31,27 +31,36 @@ except:
     quit()
 
 
-def StartWave():
-    wave = True
-    while wave:
-        l530.setBrightness(100)   
-        l530.setBrightness(80)   
-        l530.setBrightness(60)   
-        l530.setBrightness(40)   
-        l530.setBrightness(20)   
-        l530.setBrightness(1)   
-        l530.setBrightness(20)   
-        l530.setBrightness(40)   
-        l530.setBrightness(60)   
-        l530.setBrightness(80)   
-
-def StopWave():
-    wave = False
+def DimAndOff():
+    time.sleep(3)
+    l530.setBrightness(100)   
+    l530.setBrightness(95)   
+    l530.setBrightness(90)   
+    l530.setBrightness(85)   
+    l530.setBrightness(80)   
+    l530.setBrightness(85)   
+    l530.setBrightness(80)   
+    l530.setBrightness(75)   
+    l530.setBrightness(70)   
+    l530.setBrightness(65)
+    l530.setBrightness(60)   
+    l530.setBrightness(55)   
+    l530.setBrightness(50)   
+    l530.setBrightness(45)   
+    l530.setBrightness(40)   
+    l530.setBrightness(35)   
+    l530.setBrightness(30)   
+    l530.setBrightness(25)   
+    l530.setBrightness(20)   
+    l530.setBrightness(15)
+    l530.setBrightness(10)
+    l530.setBrightness(5)          
+    l530.turnOff()
 
 while True:
     if data:
         print ('Received:' + data)
         print ('Executing...')
-        _thread.start_new_thread(exec(data), ())
+        exec(data)
         data = ''   # Empty the variable ready for the next one
     time.sleep(1)
